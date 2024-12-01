@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Masto-FE standalone</title>
+    <link rel="stylesheet" href="auth-common.css">
     <script src="/auth.js"></script>
 </head>
 <body>
-<input type="text" id="instance" placeholder="yourinstance.tld">
-<button onclick="auth()" id="btn">Log in</button>
-<span id="message"></span>
+    <div class="auth-container">
+        <h1 class="auth-title">Login to Masto-FE</h1>
+        <div class="auth-form-wrapper">
+            <input type="text" id="instance" placeholder="yourinstance.tld" class="input-field">
+            <button onclick="auth()" id="btn" class="auth-button">Log in</button>
+            <span id="message"></span>
+        </div>
+    </div>
 </body>
 </html>
