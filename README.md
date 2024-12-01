@@ -4,7 +4,7 @@ Fork of glitch-soc that adds standalone support (meaning your browser can OAuth 
 
 To try this out, go to masto-fe.gotosocial.social, type in your instance domain name (for split domain setups, use the web domain) & press the button.
 
-To set this up yourself, clone the repo and run `yarn && yarn build:production`.
+To set this up yourself, clone the repo and run `yarn && yarn build:production`. Or download the pre-built tarball from the releases page.
 
 ## Reverse Proxy Setup
 
