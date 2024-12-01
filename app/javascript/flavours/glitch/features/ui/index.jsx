@@ -402,7 +402,7 @@ class UI extends PureComponent {
 
   handleResize = () => {
     // const layout = layoutFromWindow();
-    const layout = this.props.layout_local_settings || layoutFromWindow();
+    const layout = layoutFromWindow(this.props.layout_local_settings);
     if (layout !== this.props.layout) {
       this.handleLayoutChange.cancel();
       this.props.dispatch(changeLayout({ layout }));
