@@ -61,21 +61,24 @@ async function loadState() {
     "meta": {
       "access_token": access_token,
       "admin": "0",
-      "advanced_layout": true,
-      "auto_play_gif": false,
+      "advanced_layout": false,
+      "auto_play_gif": true,
       "boost_modal": false,
       "compact_reaction": false,
+      "default_content_type": "text/markdown",
       "delete_modal": true,
       "display_sensitive_media": false,
       "domain": domain,
       "enable_reaction": true,
       "locale": "en",
-      "mascot": "/images/mascot.svg",
+      "mascot": null,
       "me": credentials.id,
       "reduce_motion": false,
       "show_quote_button": true,
+      "show_trends": false,
       "base_url": `https://${domain}`,
       "streaming_api_base_url": `wss://${domain}`,
+      "trends_enabled": false,
       "title": `${instance.title}`,
       "unfollow_modal": true,
       "source_url": 'https://iceshrimp.dev/iceshrimp/masto-fe-standalone',
@@ -95,7 +98,8 @@ async function loadState() {
     },
     "settings": {
       "frequentlyUsedLanguages": {
-        "en": 1
+        "en": 2,
+        "zh": 1
       }
     },
     "languages": [

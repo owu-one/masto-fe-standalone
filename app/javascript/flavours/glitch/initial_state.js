@@ -36,6 +36,7 @@
  * @property {boolean} trends_enabled
  * @property {boolean} single_user_mode
  * @property {string} source_url
+ * @property {string} base_url
  * @property {string} streaming_api_base_url
  * @property {boolean} timeline_preview
  * @property {string} title
@@ -150,6 +151,10 @@ export const useSystemEmojiFont = getMeta('system_emoji_font');
  */
 export function getAccessToken() {
   return getMeta('access_token');
+}
+
+export function getBaseUrl() {
+  return getMeta('base_url');
 }
 
 export default initialState;
