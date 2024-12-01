@@ -18,11 +18,11 @@ async function ready() {
 }
 
 async function auth() {
-  setMessage('Please wait');
+  setMessage('请稍候');
   const instance = document.getElementById('instance').value;
   const domain = instance.match(/(?:https?:\/\/)?(.*)/)[1];
   if (!domain) {
-    setMessage('Invalid instance', false);
+    setMessage('无效的实例', false);
     return;
   }
 
@@ -35,7 +35,7 @@ async function auth() {
 }
 
 async function registerApp(domain) {
-  setMessage('Registering app');
+  setMessage('正在注册应用');
 
   const appsUrl = `https://${domain}/api/v1/apps`;
   const formData = new FormData();
@@ -59,13 +59,13 @@ async function registerApp(domain) {
 }
 
 function authorize(domain) {
-  setMessage('Authorizing');
+  setMessage('正在请求授权');
   const clientId = localStorage.getItem(`client_id`);
   document.location.href = `https://${domain}/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${document.location.origin + document.location.pathname}&scope=read+write+follow+push`;
 }
 
 async function getToken(code, domain) {
-  setMessage('Getting token');
+  setMessage('正在获取身份令牌');
 
   const tokenUrl = `https://${domain}/oauth/token`;
   const clientId = localStorage.getItem(`client_id`);

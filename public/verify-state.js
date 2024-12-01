@@ -70,7 +70,7 @@ async function loadState() {
       "display_sensitive_media": false,
       "domain": domain,
       "enable_reaction": true,
-      "locale": "en",
+      "locale": "zh",
       "mascot": null,
       "me": credentials.id,
       "reduce_motion": false,
@@ -98,8 +98,8 @@ async function loadState() {
     },
     "settings": {
       "frequentlyUsedLanguages": {
-        "en": 2,
-        "zh": 1
+        "zh": 3,
+        "en": 1
       }
     },
     "languages": [
