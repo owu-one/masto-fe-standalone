@@ -42,7 +42,9 @@ And open https://masto-fe.example.com in your browser, type in your instance dom
 
 Should anything break, open https://masto-fe.example.com/logout.html or clear local storage manually.
 
-Original README below.
+Credits to [Iceshrimp](https://iceshrimp.dev/iceshrimp/masto-fe-standalone/) for the patch.
+
+Glitch-soc's original README follows.
 
 ---
 
