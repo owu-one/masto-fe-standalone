@@ -179,7 +179,7 @@ class NavigationPanel extends Component {
 
               <hr />
 
-              {!!preferencesLink && <ColumnLink transparent href={preferencesLink} icon='cog' iconComponent={SettingsIcon} text={intl.formatMessage(messages.preferences)} />}
+              {/* {!!preferencesLink && <ColumnLink transparent href={preferencesLink} icon='cog' iconComponent={SettingsIcon} text={intl.formatMessage(messages.preferences)} />} */}
               <ColumnLink transparent onClick={onOpenSettings} icon='cogs' iconComponent={AdministrationIcon} text={intl.formatMessage(messages.app_settings)} />
 
               {canManageReports(permissions) && <ColumnLink optional transparent href='/admin/reports' icon='flag' iconComponent={ModerationIcon} text={intl.formatMessage(messages.moderation)} />}

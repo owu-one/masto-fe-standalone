@@ -82,14 +82,14 @@ class LocalSettingsNavigation extends PureComponent {
         />
         <LocalSettingsNavigationItem
           active={index === 5}
-          href={preferencesLink}
-          index={5}
-          icon='cog'
-          iconComponent={SettingsIcon}
-          title={intl.formatMessage(messages.preferences)}
-        />
-        <LocalSettingsNavigationItem
-          active={index === 6}
+        //   href={preferencesLink}
+        //   index={5}
+        //   icon='cog'
+        //   iconComponent={SettingsIcon}
+        //   title={intl.formatMessage(messages.preferences)}
+        // />
+        // <LocalSettingsNavigationItem
+        //   active={index === 6}
           className='close'
           index={6}
           onNavigate={onClose}

@@ -74,8 +74,7 @@ export const ImmutableHashtag = ({ hashtag }: ImmutableHashtagProps) => (
       hashtag.get('history') as Immutable.Collection.Indexed<
         Immutable.Map<string, number>
       >
-    )
-      .reverse()
+    )?.reverse()
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       .map((day) => day.get('uses')!)
       .toArray()}
@@ -119,7 +118,7 @@ export const Hashtag: React.FC<HashtagProps> = ({
 
       {description ? (
         <span>{description}</span>
-      ) : typeof people !== 'undefined' ? (
+      ) : !isNaN(people) && typeof people !== 'undefined' ? (
         <ShortNumber value={people} renderer={accountsCountRenderer} />
       ) : (
         <Skeleton width={100} />
@@ -132,7 +131,7 @@ export const Hashtag: React.FC<HashtagProps> = ({
       </div>
     )}
 
-    {withGraph && (
+    {withGraph && typeof history !== 'undefined' && (
       <div className='trends__item__sparkline'>
         <SilentErrorBoundary>
           <Sparklines

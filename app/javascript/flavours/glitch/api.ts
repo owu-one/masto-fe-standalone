@@ -39,9 +39,18 @@ const authorizationTokenFromInitialState = (): RawAxiosRequestHeaders => {
   };
 };
 
+const baseUrlFromInitialState = () => {
+  const baseUrl = document.querySelector<HTMLMetaElement>(
+    'meta[name=base_url]',
+  );
+
+  return baseUrl?.content;
+};
+
 // eslint-disable-next-line import/no-default-export
 export default function api(withAuthorization = true) {
   return axios.create({
+    baseURL: baseUrlFromInitialState(),
     transitional: {
       clarifyTimeoutError: true,
     },

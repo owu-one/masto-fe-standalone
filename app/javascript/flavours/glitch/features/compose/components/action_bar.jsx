@@ -34,8 +34,8 @@ export const ActionBar = () => {
 
   let menu = [];
 
-  menu.push({ text: intl.formatMessage(messages.edit_profile), href: '/settings/profile' });
-  menu.push({ text: intl.formatMessage(messages.preferences), href: '/settings/preferences' });
+  // menu.push({ text: intl.formatMessage(messages.edit_profile), href: '/settings/profile' });
+  // menu.push({ text: intl.formatMessage(messages.preferences), href: '/settings/preferences' });
   menu.push({ text: intl.formatMessage(messages.pins), to: '/pinned' });
   menu.push(null);
   menu.push({ text: intl.formatMessage(messages.follow_requests), to: '/follow_requests' });

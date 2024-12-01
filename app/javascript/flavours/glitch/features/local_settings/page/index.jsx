@@ -17,6 +17,12 @@ import LocalSettingsPageItem from './item';
 //  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 const messages = defineMessages({
+  layout_auto: { id: 'layout.auto', defaultMessage: 'Auto' },
+  layout_auto_hint: { id: 'layout.hint.auto', defaultMessage: 'Automatically choose layout based on "Enable advanced web interface" setting and screen size' },
+  layout_desktop: { id: 'layout.desktop', defaultMessage: 'Desktop' },
+  layout_desktop_hint: { id: 'layout.hint.desktop', defaultMessage: 'Use multi-column layout regardless of the "Enable advanced web interface" setting or screen size' },
+  layout_mobile: { id: 'layout.single', defaultMessage: 'Mobile' },
+  layout_mobile_hint: { id: 'layout.hint.single', defaultMessage: 'Use single-column layout regardless of the "Enable advanced web interface" setting or screen size' },
   side_arm_none: { id: 'settings.side_arm.none', defaultMessage: 'None' },
   side_arm_keep: { id: 'settings.side_arm_reply_mode.keep', defaultMessage: 'Keep its set privacy' },
   side_arm_copy: { id: 'settings.side_arm_reply_mode.copy', defaultMessage: 'Copy privacy setting of the toot being replied to' },
@@ -162,6 +168,19 @@ class LocalSettingsPage extends PureComponent {
           <h2><FormattedMessage id='settings.layout_opts' defaultMessage='Layout options' /></h2>
           <LocalSettingsPageItem
             settings={settings}
+            item={['layout']}
+            id='mastodon-settings--layout'
+            options={[
+              { value: 'auto', message: intl.formatMessage(messages.layout_auto), hint: intl.formatMessage(messages.layout_auto_hint) },
+              { value: 'multiple', message: intl.formatMessage(messages.layout_desktop), hint: intl.formatMessage(messages.layout_desktop_hint) },
+              { value: 'single', message: intl.formatMessage(messages.layout_mobile), hint: intl.formatMessage(messages.layout_mobile_hint) },
+            ]}
+            onChange={onChange}
+          >
+            <FormattedMessage id='settings.layout' defaultMessage='Layout:' />
+          </LocalSettingsPageItem>
+          <LocalSettingsPageItem
+            settings={settings}
             item={['stretch']}
             id='mastodon-settings--stretch'
             onChange={onChange}
@@ -296,12 +315,12 @@ class LocalSettingsPage extends PureComponent {
                 defaultMessage="This setting is now controlled from Mastodon's {settings_page_link}"
                 values={{
                   settings_page_link: (
-                    <a href={preferenceLink('user_setting_expand_spoilers')}>
+                    <span>
                       <FormattedMessage
                         id='settings.shared_settings_link'
                         defaultMessage='user preferences'
                       />
-                    </a>
+                    </span>
                   ),
                 }}
               />

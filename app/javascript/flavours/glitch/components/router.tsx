@@ -49,13 +49,13 @@ function normalizePath(
     );
   }
 
-  if (
-    layoutFromWindow() === 'multi-column' &&
-    location.pathname &&
-    !location.pathname.startsWith('/deck')
-  ) {
-    location.pathname = `/deck${location.pathname}`;
-  }
+  // if (
+  //   layoutFromWindow() === 'multi-column' &&
+  //   location.pathname &&
+  //   !location.pathname.startsWith('/deck')
+  // ) {
+  //   location.pathname = `/deck${location.pathname}`;
+  // }
 
   return location;
 }
