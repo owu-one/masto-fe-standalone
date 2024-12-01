@@ -1,3 +1,51 @@
+# Mastodon Standalone Frontend
+
+Fork of glitch-soc that adds standalone support (meaning your browser can OAuth against an arbitrary instance). Currently tested to work (for the most part) with Iceshrimp and GoToSocial (and obviously Mastodon).
+
+To try this out, go to masto-fe.gotosocial.social, type in your instance domain name (for split domain setups, use the web domain) & press the button.
+
+To set this up yourself, clone the repo and run `yarn && yarn build:production`.
+
+## Reverse Proxy Setup
+
+Nginx Configuration:
+
+```
+map $http_upgrade $connection_upgrade {
+        default upgrade;
+        ''      close;
+}
+
+server {
+        include sites/example.com/inc/ssl.conf;
+        server_name masto-fe.example.com;
+
+        location / {
+                root /path/to/masto-fe-standalone/public/;
+                index index.html;
+                try_files $uri /index.html;
+        }
+}
+```
+
+Caddy Configuration:
+
+```
+masto-fe.example.com {
+    root * /path/to/masto-fe-standalone/public
+    file_server
+    try_files {path} /index.html
+}
+```
+
+And open https://masto-fe.example.com in your browser, type in your instance domain, press the button & follow the OAuth flow.
+
+Should anything break, open https://masto-fe.example.com/logout.html or clear local storage manually.
+
+Original README below.
+
+---
+
 # Mastodon Glitch Edition
 
 [![Ruby Testing](https://github.com/glitch-soc/mastodon/actions/workflows/test-ruby.yml/badge.svg)](https://github.com/glitch-soc/mastodon/actions/workflows/test-ruby.yml)
